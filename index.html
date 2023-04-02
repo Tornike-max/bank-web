@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <img class="logo" src="image/logo.png" />
+        <ul class="nav-tags">
+          <li class="nav-items">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav-items">
+            <a class="nav__link" href="#section--2">Operations</a>
+          </li>
+          <li class="nav-items">
+            <a class="nav__link" href="#section--3">Testimonials</a>
+          </li>
+          <li class="nav-items">
+            <a class="nav__link nav__link--btn btn--open-modal" href="#"
+              >Open account</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-title">
+        <h1>
+            When
+            <span class="highlight">banking</span>
+            meets<br />
+            <span class="highlight">minimalist</span>
+          </h1>
+          <h4>A simpler banking experience for a simpler life.</h4>
+        <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+        <!-- Originally only src="img/hero.png" -->
+        <img
+          src="image/hero.png"
+          class="header__img"
+          alt="Minimalist bank items"
+        />
+      </div>
+
+    </header>
+
+
+    <section class="section" id="section--1">
+       <div class="section__title">
+         <h2 class="section-feature">Features</h2>
+         <h3 class="section--header">Everything you need in a modern bank and more.</h3>
+       </div>
+
+       <div class="features">
+          <img class="features__img lazy-img" alt="image" src="image/digital.jpg">
+
+          <div class="features__feature">
+            <h2 class="features--header">100% Digital Bank</h2>
+            <p class="features--text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
+                sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
+                debitis ducimus.
+              </p>
+          </div>
+
+          <div class="features__feature">
+            <h5 class="features--header">Watch your money grow</h5>
+            <p class="features--text">
+              Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
+              inventore ab? Nulla incidunt eius numquam sequi iste pariatur
+              quibusdam!
+            </p>
+          </div>
+          <img
+            src="image/grow.jpg"
+            alt="image"
+            class="features__img lazy-img"
+          />
+
+          <img
+          src="image/card.jpg"
+          alt="Credit card"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <h5 class="features--header">Free debit card included</h5>
+          <p class="features--text">
+            Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
+            eveniet consequatur odit quam quos possimus assumenda dicta fuga
+            inventore ab.
+          </p>
+        </div>
+          
+       </div>
+    </section>
+
+    <section class="section" id="section--2">
+        <div class="section__title">
+            <h2 class="section-feature">OPERATIONS</h2>
+            <h3 class="section--header">Everything as simple as possible, but no simpler.</h3>
+          </div>
+
+          <div class="Operations">
+            <div class="operations__tab-container">
+                <button
+                  class="btn operations__tab--1 operations__tab--active"
+                  data-tab="1"
+                >
+                  <span>01</span>Instant Transfers
+                </button>
+                <button class="btn operations__tab--2 operations__tab--2" data-tab="2">
+                  <span>02</span>Instant Loans
+                </button>
+                <button class="btn operations__tab--3 operations__tab--3" data-tab="3">
+                  <span>03</span>Instant Closing
+                </button>
+              </div>
+          </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
