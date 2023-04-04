@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Open+Sans&family=PT+Sans:ital@1&family=Press+Start+2P&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
@@ -23,66 +26,65 @@
             <a class="nav__link" href="#section--3">Testimonials</a>
           </li>
           <li class="nav-items">
-            <a class="nav__link nav__link--btn btn--open-modal" href="#"
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
               >Open account</a
             >
           </li>
         </ul>
       </nav>
-
+      
       <div class="header-title">
         <h1>
-            When
-            <span class="highlight">banking</span>
-            meets<br />
-            <span class="highlight">minimalist</span>
-          </h1>
-          <h4>A simpler banking experience for a simpler life.</h4>
+          Better
+          <span class="highlight">Banking.</span>
+          Higher<br />
+          <span class="highlight">Purpose.</span>
+        </h1>
+        <h4>Simple and secure personal banking available in person, online, or on your device.</h4>
         <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
-        <!-- Originally only src="img/hero.png" -->
         <img
           src="image/hero.png"
           class="header__img"
           alt="Minimalist bank items"
         />
       </div>
-
     </header>
 
-
     <section class="section" id="section--1">
-       <div class="section__title">
-         <h2 class="section-feature">Features</h2>
-         <h3 class="section--header">Everything you need in a modern bank and more.</h3>
-       </div>
+      <div class="section__title">
+        <h2 class="section-feature">Features</h2>
+        <h3 class="section--header">
+          Everything you need in a modern bank and more.
+        </h3>
+      </div>
 
-       <div class="features">
-          <img class="features__img lazy-img" alt="image" src="image/digital.jpg">
+      <div class="features">
+        <img
+          class="features__img lazy-img"
+          alt="image"
+          src="image/digital.jpg"
+        />
 
-          <div class="features__feature">
-            <h2 class="features--header">100% Digital Bank</h2>
-            <p class="features--text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
-                sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
-                debitis ducimus.
-              </p>
-          </div>
+        <div class="features__feature">
+          <h2 class="features--header">100% Digital Bank</h2>
+          <p class="features--text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
+            sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
+            debitis ducimus.
+          </p>
+        </div>
 
-          <div class="features__feature">
-            <h5 class="features--header">Watch your money grow</h5>
-            <p class="features--text">
-              Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
-              inventore ab? Nulla incidunt eius numquam sequi iste pariatur
-              quibusdam!
-            </p>
-          </div>
-          <img
-            src="image/grow.jpg"
-            alt="image"
-            class="features__img lazy-img"
-          />
+        <div class="features__feature">
+          <h5 class="features--header">Watch your money grow</h5>
+          <p class="features--text">
+            Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
+            inventore ab? Nulla incidunt eius numquam sequi iste pariatur
+            quibusdam!
+          </p>
+        </div>
+        <img src="image/grow.jpg" alt="image" class="features__img lazy-img" />
 
-          <img
+        <img
           src="image/card.jpg"
           alt="Credit card"
           class="features__img lazy-img"
@@ -95,33 +97,95 @@
             inventore ab.
           </p>
         </div>
-          
-       </div>
+      </div>
     </section>
 
     <section class="section" id="section--2">
-        <div class="section__title">
-            <h2 class="section-feature">OPERATIONS</h2>
-            <h3 class="section--header">Everything as simple as possible, but no simpler.</h3>
-          </div>
+      <div class="section__title">
+        <h2 class="section-feature">OPERATIONS</h2>
+        <h3 class="section--header">
+          Everything as simple as possible, but no simpler.
+        </h3>
+      </div>
 
-          <div class="Operations">
-            <div class="operations__tab-container">
-                <button
-                  class="btn operations__tab--1 operations__tab--active"
-                  data-tab="1"
-                >
-                  <span>01</span>Instant Transfers
-                </button>
-                <button class="btn operations__tab--2 operations__tab--2" data-tab="2">
-                  <span>02</span>Instant Loans
-                </button>
-                <button class="btn operations__tab--3 operations__tab--3" data-tab="3">
-                  <span>03</span>Instant Closing
-                </button>
-              </div>
-          </div>
+      <div class="operations">
+        <div class="operations__tab-container">
+          <button
+            class="btn operations__tab operations__tab--1"
+            data-tab="1"
+          >
+            <span>01</span>Instant Transfers
+          </button>
+          <button class="btn operations__tab operations__tab--2" data-tab="2">
+            <span>02</span>Instant Loans
+          </button>
+          <button class="btn operations__tab operations__tab--3" data-tab="3">
+            <span>03</span>Instant Closing
+          </button>
+        </div>
+
+        <div
+          class="operations__content operations__content--1 operations__content--active"
+        >
+          <h5 class="operations__header">
+            Tranfser money to anyone, instantly! No fees, no BS.
+          </h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+        <div class="operations__content operations__content--2">
+          <h5 class="operations__header">
+            Buy a home or make your dreams come true, with instant loans.
+          </h5>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
+        </div>
+        <div class="operations__content operations__content--3">
+          <h5 class="operations__header">
+            No longer need your account? No problem! Close it instantly.
+          </h5>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+      </div>
     </section>
+
+    <section class="section" id="section--3">
+      <div class="section__title">
+        <h2 class="section-feature">NOT SURE YET?</h2>
+        <h3 class="section--header">
+          Millions of Bankists are already making their lifes simpler.
+        </h3>
+      </div>
+    </section>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Open your bank account <br />
+        in just <span class="highlight">5 minutes</span>
+      </h2>
+      <form class="modal__form">
+        <input placeholder="First name" type="text" />
+        <input placeholder="Last name" type="text" />
+        <input placeholder="email" type="email" />
+        <button class="btn">Next step &rarr;</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
 
     <script src="script.js"></script>
   </body>
