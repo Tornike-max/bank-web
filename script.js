@@ -73,36 +73,36 @@ document.querySelector('.nav-tags').addEventListener('click', function(e){
     }
 })
 
-nav.addEventListener('mouseover', function(e){
+
+
+const handleHover = function(e){
+    console.log(this)
     if(e.target.classList.contains('nav__link')){
         let link = e.target;
-        let siblings = link.closest('.navigation').querySelector('.nav__link');
-        let logo = link.closest('.navigation').querySelector('.navigation')
+        let siblings = link.closest('.navigation').querySelectorAll('.nav__link');
+        let logo = link.closest('.navigation').querySelector('.logo')
         
         siblings.forEach(el=>{
-            if(el !== link) el.style.opacity = 0.5
-            
+            if(el !== link) 
+            el.style.opacity = this;
+            logo.style.opacity = this;
         });
-        logo.style.opacity = 0.5
-        console.log(link)
-    }
-})
-
-nav.addEventListener('mouseout', function(e){
-    if(e.target.classList.contains('nav__link')){
-        let link = e.target;
-        let siblings = link.closest('.navigation').querySelector('.nav__link');
-        let logo = link.closest('.navigation').querySelector('.navigation')
         
-        siblings.forEach(el=>{
-            if(el !== link) el.style.opacity = 1
-            
-        });
-        logo.style.opacity = 1
         console.log(link)
     }
-})
+}
 
+nav.addEventListener('mouseover', handleHover.bind(0.5))
+nav.addEventListener('mouseout', handleHover.bind(1))
+
+
+//scroll
+const initialCords = section1.getBoundingClientRect();
+console.log(initialCords)
+window.addEventListener('scroll', function(){
+    if(this.window.scrollY > initialCords.top) nav.classList.add('fixed')
+    else nav.classList.remove('fixed')
+})
 
 // active tab
 tabsContainer.addEventListener('click',function(e){
