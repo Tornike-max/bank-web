@@ -21,6 +21,9 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
+//sections
+const allSection = document.querySelectorAll('.section');
+
 
 // sign up modal
 let openModal = function(e){
@@ -116,7 +119,6 @@ console.log(viewportMargin)
 
 const stickyNav = function(entries){
      const [entry] = entries
-     console.log('ენთრი',entry) 
 
      if(!entry.isIntersecting) 
      nav.classList.add('fixed')
@@ -134,9 +136,30 @@ const headerObserver = new IntersectionObserver
 })
 
 //აქ ვეუბნებით რომ headerObserver-ის
-console.log('bara',headerObserver)
-console.log('sadasd',headerObserver.observe(header))
+headerObserver.observe(header)
 
+
+//all sections
+
+const revealSection = function(entries,observer){
+    const [entry] = entries;
+    console.log(entry)
+    if(!entry.isIntersecting) return;
+    entry.target.classList.remove('section--hidden')
+    observer.unobserve(entry.target)
+}
+
+const sectionObserver = new IntersectionObserver
+(revealSection,{
+    root:null,
+    threshold: 0.1,
+})
+
+allSection.forEach(function(section){
+    sectionObserver.observe(section);
+    section.classList.add('section--hidden')
+    
+})
 
 
 // active tab
@@ -153,6 +176,10 @@ tabsContainer.addEventListener('click',function(e){
     document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active')
 
 })
+
+//slider
+
+let slide = document.querySelectorAll('.slide')
 
 
 
