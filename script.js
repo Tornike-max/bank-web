@@ -3,6 +3,7 @@ let overlay = document.querySelector('.overlay');
 
 //navigation
 let nav = document.querySelector('.navigation');
+let header = document.querySelector('.header');
 
 //buttons
 let btnCloseModal = document.querySelector('.btn--close-modal');
@@ -21,6 +22,7 @@ const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
 
+// sign up modal
 let openModal = function(e){
     e.preventDefault();
     modal.classList.remove('hidden')
@@ -44,7 +46,7 @@ document.addEventListener('keydown',function(e){
 })
 
 
-//
+// learn more scroll
 btnScrollTo.addEventListener('click', function(e){
     // let s1scroll = section1.getBoundingClientRect();
     // console.log(s1scroll)
@@ -65,6 +67,7 @@ btnScrollTo.addEventListener('click', function(e){
 })
 
 
+//nav links scroll
 document.querySelector('.nav-tags').addEventListener('click', function(e){
     e.preventDefault()
     if(e.target.classList.contains('nav__link')){
@@ -74,7 +77,7 @@ document.querySelector('.nav-tags').addEventListener('click', function(e){
 })
 
 
-
+//nav link hovers
 const handleHover = function(e){
     console.log(this)
     if(e.target.classList.contains('nav__link')){
@@ -96,13 +99,45 @@ nav.addEventListener('mouseover', handleHover.bind(0.5))
 nav.addEventListener('mouseout', handleHover.bind(1))
 
 
-//scroll
-const initialCords = section1.getBoundingClientRect();
-console.log(initialCords)
-window.addEventListener('scroll', function(){
-    if(this.window.scrollY > initialCords.top) nav.classList.add('fixed')
-    else nav.classList.remove('fixed')
+//fixed navigation
+// const initialCords = section1.getBoundingClientRect();
+// console.log(initialCords)
+// window.addEventListener('scroll', function(){
+//     if(this.window.scrollY > initialCords.top) nav.classList.add('fixed')
+//     else nav.classList.remove('fixed')
+// })
+
+//აქ viewportMargin-ში ვიძახებთ getBoundingClientRect-ს რათა გავიგოთ ნავიგაციის სიმაღლე. 
+//სიმაღ₾ე იმიტომ გვაინტერესებს, რომ როდესაც header-ის ბოლომდე დარჩება იმდენი  სიმაღლე პიქსელებში,
+// რამდენსაც ჩვენ გადავცემთ,მაშინ გამოიტანს ნავიგაციას
+const viewportMargin = nav.getBoundingClientRect().height
+console.log(viewportMargin)
+
+
+const stickyNav = function(entries){
+     const [entry] = entries
+     console.log('ენთრი',entry) 
+
+     if(!entry.isIntersecting) 
+     nav.classList.add('fixed')
+     else nav.classList.remove('fixed')
+}
+
+// headerObserver ში ვინახავთ IntersectionObserver-is ფუნცქიას და root-ს, რომელიც არის display, 
+//ასევე არის threshold, რომელიც გადმოგვცემს იმას, თ როდის უნდა გამოიძახოს ფუნცქია, და როდესაც გადაივლის მთიან სექციას
+// მაში გამოიძახებს, რადგან 0 პროცენტი გვაქ მინიჭებული. ასევე გვაქვს rootMargin- რომელიც ზემოთ გამოვიანგარიშეთ viewportMargin-ში
+const headerObserver = new IntersectionObserver
+(stickyNav,{
+    root: null,
+    threshold: 0,
+    rootMargin: `-${viewportMargin}px`,
 })
+
+//აქ ვეუბნებით რომ headerObserver-ის
+console.log('bara',headerObserver)
+console.log('sadasd',headerObserver.observe(header))
+
+
 
 // active tab
 tabsContainer.addEventListener('click',function(e){
