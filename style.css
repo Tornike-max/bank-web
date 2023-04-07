@@ -446,16 +446,6 @@ p{
     transition: transform 1s;
 }
 
-.slide-header{
-    font-size:35px;
-    color:#5ec576;
-}
-
-.slide-text{
-    margin:0 auto;
-    font-size:25px;
-    color:grey;
-}
 
 .slider__btn--left {
     left: 6%;
@@ -466,6 +456,7 @@ p{
     right: 6%;
     transform: translate(20%, -20%);
 }
+
 .slider__btn {
     position: absolute;
     top: 40%;
@@ -498,11 +489,6 @@ p{
     margin:0 auto;
 }
 
-.btns{
-    max-width: 500px;
-    height:100px;
-    background-color: red;
-}
 
 
 /* footer */
